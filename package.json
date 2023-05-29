@@ -16,7 +16,7 @@
   "author": "",
   "license": "ISC",
   "lint-staged": {
-    "src/**/*.ts": "pnpm prettier:check"
+    "src/**/*.ts": "pnpm lint-prettier"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",
