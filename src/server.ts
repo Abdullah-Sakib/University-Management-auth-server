@@ -1,16 +1,17 @@
 import mongoose from 'mongoose'
 import app from './app'
 import confit from './config/index'
+import { logger, errorlogger } from './shared/logger'
 
 async function bootstrap() {
   try {
     await mongoose.connect(confit.database_url as string)
-    console.log('✅ Database connected successfully')
+    logger.info('✅ Database connected successfully')
     app.listen(confit.port, () => {
-      console.log(`Application listening on port ${confit.port}`)
+      logger.info(`Application listening on port ${confit.port}`)
     })
   } catch (err) {
-    console.log('❌ Failed to connect database.', err)
+    errorlogger.error('❌ Failed to connect database.', err)
   }
 }
 
