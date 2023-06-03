@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-BE\\logs\\winston\\success\\.f97e56cb1345e69d36ff4680924cbc8a48fcf35e-audit.json",
+    "files": [
+        {
+            "date": 1685800509136,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-BE\\logs\\winston\\success\\UMS-2023-06-03-19-success.log",
+            "hash": "a0cd734a62f0477dbf066547afd8f12b6c2b5986a362da487ed0938a3a25159b"
+        }
+    ],
+    "hashType": "sha256"
+}
