@@ -2,6 +2,7 @@ import mongoose from 'mongoose'
 import { GenericErrorMessage } from '../interfaces/error'
 import { GenericErrorResponse } from '../interfaces/common'
 
+// This function handles validation errors in Mongoose and returns a formatted error response
 export const handleValidationError = (
   err: mongoose.Error.ValidationError
 ): GenericErrorResponse => {
