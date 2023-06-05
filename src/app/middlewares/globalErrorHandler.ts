@@ -1,16 +1,15 @@
-import { NextFunction, Request, Response } from 'express'
+import { ErrorRequestHandler } from 'express'
 import config from '../../config'
 import { GenericErrorMessage } from '../../interfaces/error'
 import { handleValidationError } from '../../errors/handleValidationError'
 import ApiError from '../../errors/ApiError'
-import mongoose from 'mongoose'
 
 // Global error handler middleware
-const globalErrorHandler = (
-  err: mongoose.Error.ValidationError, // Error object representing a validation error
-  req: Request, // Express request object
-  res: Response, // Express response object
-  next: NextFunction // Express next function
+const globalErrorHandler: ErrorRequestHandler = (
+  err, // Error object representing a validation error
+  req, // Express request object
+  res, // Express response object
+  next // Express next function
 ) => {
   let statusCode = 500 // Default status code for internal server errors
   let message = 'Something went wrong!' // Default error message

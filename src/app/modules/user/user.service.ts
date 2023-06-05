@@ -1,8 +1,8 @@
 import config from '../../../config'
 import ApiError from '../../../errors/ApiError'
-import { IUser } from './users.interface'
-import { User } from './users.model'
-import { generageUserId } from './users.utility'
+import { IUser } from './user.interface'
+import { User } from './user.model'
+import { generageUserId } from './user.utility'
 
 const createUser = async (user: IUser): Promise<IUser | null> => {
   const id = await generageUserId()
@@ -20,6 +20,6 @@ const createUser = async (user: IUser): Promise<IUser | null> => {
   return createdUser
 }
 
-export default {
+export const UserService = {
   createUser,
 }
