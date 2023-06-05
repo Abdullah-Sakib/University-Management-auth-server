@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from 'express'
 import { AnyZodObject } from 'zod'
 
+// Middleware function to validate requests against a given schema
 const validateRequest =
   (schema: AnyZodObject) =>
   async (req: Request, res: Response, next: NextFunction): Promise<void> => {
