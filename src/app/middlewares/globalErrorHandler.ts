@@ -1,8 +1,11 @@
+/* eslint-disable no-console */
+/* eslint-disable no-unused-expressions */
 import { ErrorRequestHandler } from 'express'
 import config from '../../config'
 import { GenericErrorMessage } from '../../interfaces/error'
 import { handleValidationError } from '../../errors/handleValidationError'
 import ApiError from '../../errors/ApiError'
+import { errorlogger } from '../../shared/logger'
 
 // Global error handler middleware
 const globalErrorHandler: ErrorRequestHandler = (
@@ -11,6 +14,11 @@ const globalErrorHandler: ErrorRequestHandler = (
   res, // Express response object
   next // Express next function
 ) => {
+  // Log errors in production environment otherwise log in console
+  config.env === 'development'
+    ? console.log(`😲 globalErrorHander`, err)
+    : errorlogger.error(`😲 globalErrorHander`, err)
+
   let statusCode = 500 // Default status code for internal server errors
   let message = 'Something went wrong!' // Default error message
   let errorMessage: GenericErrorMessage[] = [] // Array to store detailed error messages
