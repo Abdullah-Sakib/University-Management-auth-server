@@ -19,7 +19,7 @@ const Months = [
   'December',
 ];
 
-const userSchema = new Schema<IAcademicSemister>(
+const academicSemisterSchema = new Schema<IAcademicSemister>(
   {
     title: {
       type: String,
@@ -53,5 +53,5 @@ const userSchema = new Schema<IAcademicSemister>(
 
 export const AcademicSemister = model<IAcademicSemister, AcademicSemisterModel>(
   'AcademicSemister',
-  userSchema
+  academicSemisterSchema
 );
