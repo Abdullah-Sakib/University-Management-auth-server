@@ -1,8 +1,8 @@
 export type GenericErrorResponse = {
-  statusCode: number
-  message: string
+  statusCode: number;
+  message: string;
   errorMessage: {
-    path: string | number
-    message: string
-  }[]
-}
+    path: string | number;
+    message: string;
+  }[];
+};

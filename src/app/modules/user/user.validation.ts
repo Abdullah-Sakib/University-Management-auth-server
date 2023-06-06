@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import { z } from 'zod';
 
 // Define the Zod schema for creating a user
 const createUserZodSchema = z.object({
@@ -8,8 +8,8 @@ const createUserZodSchema = z.object({
     }),
     password: z.string().optional(),
   }),
-})
+});
 
 export const UserValidation = {
   createUserZodSchema,
-}
+};

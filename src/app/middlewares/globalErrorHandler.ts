@@ -1,13 +1,13 @@
 /* eslint-disable no-console */
 /* eslint-disable no-unused-expressions */
-import { ErrorRequestHandler } from 'express'
-import config from '../../config'
-import { GenericErrorMessage } from '../../interfaces/error'
-import { handleValidationError } from '../../errors/handleValidationError'
-import ApiError from '../../errors/ApiError'
-import { errorlogger } from '../../shared/logger'
-import { ZodError } from 'zod'
-import handleZodError from '../../errors/handleZodError'
+import { ErrorRequestHandler } from 'express';
+import config from '../../config';
+import { GenericErrorMessage } from '../../interfaces/error';
+import { handleValidationError } from '../../errors/handleValidationError';
+import ApiError from '../../errors/ApiError';
+import { errorlogger } from '../../shared/logger';
+import { ZodError } from 'zod';
+import handleZodError from '../../errors/handleZodError';
 
 // Global error handler middleware
 const globalErrorHandler: ErrorRequestHandler = (
@@ -19,31 +19,31 @@ const globalErrorHandler: ErrorRequestHandler = (
   // Log errors in production environment otherwise log in console
   config.env === 'development'
     ? console.log(`😲 globalErrorHander`, err)
-    : errorlogger.error(`😲 globalErrorHander`, err)
+    : errorlogger.error(`😲 globalErrorHander`, err);
 
-  let statusCode = 500 // Default status code for internal server errors
-  let message = 'Something went wrong!' // Default error message
-  let errorMessage: GenericErrorMessage[] = [] // Array to store detailed error messages
+  let statusCode = 500; // Default status code for internal server errors
+  let message = 'Something went wrong!'; // Default error message
+  let errorMessage: GenericErrorMessage[] = []; // Array to store detailed error messages
 
   // Check if the error is a validation error
   if (err?.name === 'ValidationError') {
     // Handle the validation error
-    const simplifiedError = handleValidationError(err)
-    statusCode = simplifiedError?.statusCode
-    message = simplifiedError?.message
-    errorMessage = simplifiedError?.errorMessage
+    const simplifiedError = handleValidationError(err);
+    statusCode = simplifiedError?.statusCode;
+    message = simplifiedError?.message;
+    errorMessage = simplifiedError?.errorMessage;
   }
   // Checi if the error is an instance of ZodError
   else if (err instanceof ZodError) {
-    const simplifiedError = handleZodError(err)
-    statusCode = simplifiedError?.statusCode
-    message = simplifiedError?.message
-    errorMessage = simplifiedError?.errorMessage
+    const simplifiedError = handleZodError(err);
+    statusCode = simplifiedError?.statusCode;
+    message = simplifiedError?.message;
+    errorMessage = simplifiedError?.errorMessage;
   }
   // Check if the error is an instance of the custom ApiError class
   else if (err instanceof ApiError) {
-    statusCode = err?.status
-    message = err?.message
+    statusCode = err?.status;
+    message = err?.message;
     errorMessage = err?.message
       ? [
           {
@@ -51,11 +51,11 @@ const globalErrorHandler: ErrorRequestHandler = (
             message: err?.message,
           },
         ]
-      : []
+      : [];
   }
   // Check if the error is a generic Error object
   else if (err instanceof Error) {
-    message = err?.message
+    message = err?.message;
     errorMessage = err?.message
       ? [
           {
@@ -63,7 +63,7 @@ const globalErrorHandler: ErrorRequestHandler = (
             message: err?.message,
           },
         ]
-      : []
+      : [];
   }
 
   // Send the error response
@@ -72,8 +72,8 @@ const globalErrorHandler: ErrorRequestHandler = (
     message,
     errorMessage,
     stack: config.env !== 'production' ? err.stack : undefined,
-  })
-  next() // Call the next middleware function
-}
+  });
+  next(); // Call the next middleware function
+};
 
-export default globalErrorHandler
+export default globalErrorHandler;

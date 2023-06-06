@@ -1,6 +1,6 @@
-import { ZodError, ZodIssue } from 'zod'
-import { GenericErrorResponse } from '../interfaces/common'
-import { GenericErrorMessage } from '../interfaces/error'
+import { ZodError, ZodIssue } from 'zod';
+import { GenericErrorResponse } from '../interfaces/common';
+import { GenericErrorMessage } from '../interfaces/error';
 
 // Function to handle Zod validation errors
 const handleZodError = (error: ZodError): GenericErrorResponse => {
@@ -12,11 +12,11 @@ const handleZodError = (error: ZodError): GenericErrorResponse => {
         path: issue?.path[issue?.path?.length - 1],
         // Extract the error message
         message: issue.message,
-      }
+      };
     }
-  )
+  );
 
-  const statusCode = 400
+  const statusCode = 400;
   return {
     // Set the response status code
     statusCode,
@@ -24,7 +24,7 @@ const handleZodError = (error: ZodError): GenericErrorResponse => {
     message: 'Zod Validation Error',
     // Set the detailed error messages
     errorMessage: errors,
-  }
-}
+  };
+};
 
-export default handleZodError
+export default handleZodError;

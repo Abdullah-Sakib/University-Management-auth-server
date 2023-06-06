@@ -1,17 +1,17 @@
-import { createLogger, format, transports } from 'winston'
-import path from 'path'
-import process from 'process'
-import DailyRotateFile from 'winston-daily-rotate-file'
-const { combine, timestamp, label, printf, prettyPrint } = format
+import { createLogger, format, transports } from 'winston';
+import path from 'path';
+import process from 'process';
+import DailyRotateFile from 'winston-daily-rotate-file';
+const { combine, timestamp, label, printf, prettyPrint } = format;
 
 // Custom format
 const myFormat = printf(({ level, message, label, timestamp }) => {
-  const date = new Date(timestamp)
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
-  return `${`[${date.toDateString()} ${hour}:${minute}:${second}]`} [${label}] ${level}: ${message}`
-})
+  const date = new Date(timestamp);
+  const hour = date.getHours();
+  const minute = date.getMinutes();
+  const second = date.getSeconds();
+  return `${`[${date.toDateString()} ${hour}:${minute}:${second}]`} [${label}] ${level}: ${message}`;
+});
 
 // Create a logger for general information logs
 const logger = createLogger({
@@ -34,7 +34,7 @@ const logger = createLogger({
       maxFiles: '14d',
     }),
   ],
-})
+});
 
 // Create a logger specifically for error logs
 const errorlogger = createLogger({
@@ -57,6 +57,6 @@ const errorlogger = createLogger({
       maxFiles: '14d',
     }),
   ],
-})
+});
 
-export { logger, errorlogger }
+export { logger, errorlogger };
