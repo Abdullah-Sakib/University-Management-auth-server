@@ -4,11 +4,27 @@ import {
   AcademicSemisterModel,
 } from './academicSemister.interface';
 
+const Months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
+
 const userSchema = new Schema<IAcademicSemister>(
   {
     title: {
       type: String,
       required: true,
+      enum: ['Autumn', 'Summer', 'Fall'],
     },
     year: {
       type: Number,
@@ -17,14 +33,17 @@ const userSchema = new Schema<IAcademicSemister>(
     code: {
       type: String,
       required: true,
+      enum: ['01', '02', '03'],
     },
     startMonth: {
       type: String,
       required: true,
+      enum: Months,
     },
     endMonth: {
       type: String,
       required: true,
+      enum: Months,
     },
   },
   {
