@@ -2,7 +2,7 @@ export type GenericErrorResponse = {
   statusCode: number
   message: string
   errorMessage: {
-    path: string
+    path: string | number
     message: string
   }[]
 }

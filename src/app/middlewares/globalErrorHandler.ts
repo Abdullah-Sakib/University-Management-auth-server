@@ -6,6 +6,8 @@ import { GenericErrorMessage } from '../../interfaces/error'
 import { handleValidationError } from '../../errors/handleValidationError'
 import ApiError from '../../errors/ApiError'
 import { errorlogger } from '../../shared/logger'
+import { ZodError } from 'zod'
+import handleZodError from '../../errors/handleZodError'
 
 // Global error handler middleware
 const globalErrorHandler: ErrorRequestHandler = (
@@ -27,6 +29,13 @@ const globalErrorHandler: ErrorRequestHandler = (
   if (err?.name === 'ValidationError') {
     // Handle the validation error
     const simplifiedError = handleValidationError(err)
+    statusCode = simplifiedError?.statusCode
+    message = simplifiedError?.message
+    errorMessage = simplifiedError?.errorMessage
+  }
+  // Checi if the error is an instance of ZodError
+  else if (err instanceof ZodError) {
+    const simplifiedError = handleZodError(err)
     statusCode = simplifiedError?.statusCode
     message = simplifiedError?.message
     errorMessage = simplifiedError?.errorMessage

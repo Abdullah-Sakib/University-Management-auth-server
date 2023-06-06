@@ -33,7 +33,10 @@ async function bootstrap() {
 
     if (server) {
       // Close the server and log the error
-      server.close(() => errorlogger.error(error))
+      server.close(() => {
+        errorlogger.error(error)
+        process.exit(1)
+      })
     } else {
       // If server is not available, exit the process
       process.exit(1)
