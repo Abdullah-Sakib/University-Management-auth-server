@@ -99,6 +99,16 @@
             "date": 1686144696716,
             "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-BE\\logs\\winston\\success\\UMS-2023-06-07-19-success.log",
             "hash": "cdad88d2fcf518be3dbe4e0fe45075d69a8d881084fdfd46c79db7fa84762c9f"
+        },
+        {
+            "date": 1686147624447,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-BE\\logs\\winston\\success\\UMS-2023-06-07-20-success.log",
+            "hash": "6a10658f81213eb84f61843ec9e4310a01d4bc50c69adda07ab25613b59b2401"
+        },
+        {
+            "date": 1686150632775,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-BE\\logs\\winston\\success\\UMS-2023-06-07-21-success.log",
+            "hash": "9c14ed097f2e7d1111f0684b0cbb6640509a6f11cab6ed53338bf34147db9502"
         }
     ],
     "hashType": "sha256"
