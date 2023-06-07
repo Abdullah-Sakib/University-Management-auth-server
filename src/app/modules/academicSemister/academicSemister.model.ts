@@ -3,6 +3,8 @@ import {
   IAcademicSemister,
   AcademicSemisterModel,
 } from './academicSemister.interface';
+import ApiError from '../../../errors/ApiError';
+import httpStatus from 'http-status';
 
 const Months = [
   'January',
@@ -50,6 +52,17 @@ const academicSemisterSchema = new Schema<IAcademicSemister>(
     timestamps: true,
   }
 );
+// Handling same year and same semister conflict issue using mongoose ( pre ) middleware or hook.
+academicSemisterSchema.pre('save', async function (next) {
+  const isExist = await AcademicSemister.findOne({
+    title: this.title,
+    year: this.year,
+  });
+  if (isExist) {
+    throw new ApiError(httpStatus.CONFLICT, 'Semister already exists!!!');
+  }
+  next();
+});
 
 export const AcademicSemister = model<IAcademicSemister, AcademicSemisterModel>(
   'AcademicSemister',
