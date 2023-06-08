@@ -16,7 +16,11 @@ const myFormat = printf(({ level, message, label, timestamp }) => {
 // Create a logger for general information logs
 const logger = createLogger({
   level: 'info',
-  format: combine(label({ label: 'UM' }), timestamp(), myFormat, prettyPrint()),
+  format: combine(
+    label({ label: 'UM' }),
+    timestamp(),
+    myFormat /* prettyPrint() */
+  ),
   defaultMeta: { service: 'user-service' },
   transports: [
     new transports.Console(), // Log to the console
