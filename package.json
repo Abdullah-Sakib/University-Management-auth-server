@@ -1,5 +1,5 @@
 {
-  "name": "University-Management-BE",
+  "name": "University-Management-auth-BE",
   "version": "1.0.0",
   "description": "",
   "main": "src/server.ts",

@@ -2,7 +2,7 @@ import { createLogger, format, transports } from 'winston';
 import path from 'path';
 import process from 'process';
 import DailyRotateFile from 'winston-daily-rotate-file';
-const { combine, timestamp, label, printf, prettyPrint } = format;
+const { combine, timestamp, label, printf /* prettyPrint */ } = format;
 
 // Custom format
 const myFormat = printf(({ level, message, label, timestamp }) => {
@@ -43,7 +43,11 @@ const logger = createLogger({
 // Create a logger specifically for error logs
 const errorlogger = createLogger({
   level: 'error',
-  format: combine(label({ label: 'UM' }), timestamp(), myFormat, prettyPrint()),
+  format: combine(
+    label({ label: 'UM' }),
+    timestamp(),
+    myFormat /* prettyPrint() */
+  ),
   defaultMeta: { service: 'user-service' },
   transports: [
     new transports.Console(), // Log errors to the console
