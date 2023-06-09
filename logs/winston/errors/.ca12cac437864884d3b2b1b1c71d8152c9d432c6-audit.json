@@ -1,25 +1,55 @@
 {
-  "keep": {
-    "days": true,
-    "amount": 14
-  },
-  "auditLog": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\.ca12cac437864884d3b2b1b1c71d8152c9d432c6-audit.json",
-  "files": [
-    {
-      "date": 1686299597918,
-      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-06-09-14-errors.log",
-      "hash": "456258984044fd3c836933f581b0b419a241b4e3c65ffa232d9183bb4709273e"
+    "keep": {
+        "days": true,
+        "amount": 14
     },
-    {
-      "date": 1686301241287,
-      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-06-09-15-errors.log",
-      "hash": "ca2248f9dd50c688d6b00324a841aa7165277a42d34086233984094d911fdd8f"
-    },
-    {
-      "date": 1686305315148,
-      "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-06-09-16-errors.log",
-      "hash": "6e0430e34433762947a16536186b7abc28500778e0540b5c74f787c24de45f25"
-    }
-  ],
-  "hashType": "sha256"
+    "auditLog": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\.ca12cac437864884d3b2b1b1c71d8152c9d432c6-audit.json",
+    "files": [
+        {
+            "date": 1686299597918,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-06-09-14-errors.log",
+            "hash": "456258984044fd3c836933f581b0b419a241b4e3c65ffa232d9183bb4709273e"
+        },
+        {
+            "date": 1686301241287,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-06-09-15-errors.log",
+            "hash": "ca2248f9dd50c688d6b00324a841aa7165277a42d34086233984094d911fdd8f"
+        },
+        {
+            "date": 1686305315148,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-06-09-16-errors.log",
+            "hash": "6e0430e34433762947a16536186b7abc28500778e0540b5c74f787c24de45f25"
+        },
+        {
+            "date": 1686310459159,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-06-09-17-errors.log",
+            "hash": "e2c5be7dc946a91f2071479cf49edfa0aa98dc9398f202efae8127fe7bd6bf25"
+        },
+        {
+            "date": 1686312708567,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-06-09-18-errors.log",
+            "hash": "645ba62a74838788637d72ea926bf468ffd940207336a0a31af890cfc705a10a"
+        },
+        {
+            "date": 1686317696056,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-06-09-19-errors.log",
+            "hash": "da50b6b5b361edba7787f6a5024412f9a45ae57191230bf53cb8f1a4b8f0b743"
+        },
+        {
+            "date": 1686319497322,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-06-09-20-errors.log",
+            "hash": "a2f9e9f8bd601124c71575d6591b6158d05133ea9e16ccb95d05112a4a7cefb4"
+        },
+        {
+            "date": 1686324911007,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-06-09-21-errors.log",
+            "hash": "149c58369280f227e8ec047024a1eb22ec2d9701359fc79ff89fbc0da72d9c9c"
+        },
+        {
+            "date": 1686326448103,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-06-09-22-errors.log",
+            "hash": "c1600cd3a9ac297195d58317314577b9f01908cb5576ceb4889f64d8b0dcc789"
+        }
+    ],
+    "hashType": "sha256"
 }
