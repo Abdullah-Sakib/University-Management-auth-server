@@ -69,7 +69,7 @@ const globalErrorHandler: ErrorRequestHandler = (
   next(); // Call the next middleware function
 
   // Send the error response
-  return res.status(statusCode).json({
+  res.status(statusCode).json({
     success: false,
     message,
     errorMessage,

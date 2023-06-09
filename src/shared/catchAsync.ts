@@ -6,9 +6,9 @@ import { NextFunction, Request, RequestHandler, Response } from 'express';
 const catchAsync = (func: RequestHandler) => {
   return async (req: Request, res: Response, next: NextFunction) => {
     try {
-      func(req, res, next); // Call the provided request handler function
+      await func(req, res, next); // Call the provided request handler function
     } catch (error) {
-      next(); // Call the next middleware or error handler in case of an error
+      next(error); // Call the next middleware or error handler in case of an error
     }
   };
 };

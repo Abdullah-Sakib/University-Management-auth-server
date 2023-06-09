@@ -5,7 +5,7 @@ import httpStatus from 'http-status';
 import { IAcademicSemister } from './academicSemister.interface';
 import { RequestHandler } from 'express';
 
-const createSemister: RequestHandler = catchAsync(async (req, res, next) => {
+const createSemister: RequestHandler = catchAsync(async (req, res) => {
   const { ...academicSemisterData } = req.body;
   const result = await AcademicSemisterService.createSemister(
     academicSemisterData
@@ -17,7 +17,6 @@ const createSemister: RequestHandler = catchAsync(async (req, res, next) => {
     message: 'Academic semister created successfully',
     data: result,
   });
-  next();
 });
 
 export const AcademicSemisterController = {

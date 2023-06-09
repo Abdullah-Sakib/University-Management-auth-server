@@ -50,7 +50,7 @@ academicSemisterSchema.pre('save', async function (next) {
     year: this.year,
   });
   if (isExist) {
-    throw new ApiError(httpStatus.CONFLICT, 'Semister already exists!!!');
+    throw new ApiError(httpStatus.CONFLICT, 'Semister already exists!!! 😶');
   }
   next();
 });
