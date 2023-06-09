@@ -6,6 +6,7 @@ import { IAcademicSemester } from './academicSemester.interface';
 import { RequestHandler } from 'express';
 import { pick } from '../../../shared/pick';
 import { paginationFields } from '../../../constants/pagination';
+import { academicSemesterFilterableFields } from './academicSemester.constants';
 
 const createSemester: RequestHandler = catchAsync(async (req, res) => {
   const { ...academicSemesterData } = req.body;
@@ -22,7 +23,7 @@ const createSemester: RequestHandler = catchAsync(async (req, res) => {
 });
 
 const getAllSemesters: RequestHandler = catchAsync(async (req, res) => {
-  const filters = pick(req.query, ['searchTerm']);
+  const filters = pick(req.query, academicSemesterFilterableFields);
   const paginationOptions = pick(req.query, paginationFields);
 
   const result = await AcademicSemesterService.getAllSemesters(
