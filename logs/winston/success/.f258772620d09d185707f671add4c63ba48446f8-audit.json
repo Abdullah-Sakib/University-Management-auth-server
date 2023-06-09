@@ -1,0 +1,40 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-BE\\logs\\winston\\success\\.f258772620d09d185707f671add4c63ba48446f8-audit.json",
+    "files": [
+        {
+            "date": 1686245802471,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-BE\\logs\\winston\\success\\UMS-2023-06-08-23-success.log",
+            "hash": "2de0d4951dd4d18d5bf2cd161b464236cb25801a23e99b97b9ffa8297e5e2d32"
+        },
+        {
+            "date": 1686247239489,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-BE\\logs\\winston\\success\\UMS-2023-06-09-00-success.log",
+            "hash": "e9ef1ec2c6909d7f5af8a53436eca4065e98560d3e395a4ac7a76fc0f5fd31b6"
+        },
+        {
+            "date": 1686279204734,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-BE\\logs\\winston\\success\\UMS-2023-06-09-08-success.log",
+            "hash": "fe7dbd862f73de903157b2297c98f2013cef57cffac01ccbecd330f6f7d5cce6"
+        },
+        {
+            "date": 1686279737002,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-BE\\logs\\winston\\success\\UMS-2023-06-09-09-success.log",
+            "hash": "d066f4044919911ddccd3fb24f30990eb1668d53f15b8b32293cf5f2ad1df443"
+        },
+        {
+            "date": 1686283627469,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-BE\\logs\\winston\\success\\UMS-2023-06-09-10-success.log",
+            "hash": "5babfedff1d6ccafcb71cbda90a3c47c9b16ad5ae057f2fae12f3a663b4fcf76"
+        },
+        {
+            "date": 1686287772663,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-BE\\logs\\winston\\success\\UMS-2023-06-09-11-success.log",
+            "hash": "0f7d8f0f0d9818385f04f706579356ab570700ce1c903513b38675bdd049780a"
+        }
+    ],
+    "hashType": "sha256"
+}

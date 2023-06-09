@@ -5,15 +5,15 @@ const router = express.Router();
 
 const moduleRoutes = [
   {
-    router: '/users/',
-    path: UserRouter,
+    path: '/users',
+    router: UserRouter,
   },
   {
-    router: '/academic-semisters/',
-    path: AcademicSemisterRouter,
+    path: '/academic-semisters',
+    router: AcademicSemisterRouter,
   },
 ];
 
-moduleRoutes.forEach(route => router.use(route.router, route.path));
+moduleRoutes.forEach(route => router.use(route.path, route.router));
 
 export default router;

@@ -18,8 +18,8 @@ const globalErrorHandler: ErrorRequestHandler = (
 ) => {
   // Log errors in production environment otherwise log in console
   config.env === 'development'
-    ? console.log(`😲 globalErrorHander`, err)
-    : errorlogger.error(`😲 globalErrorHander`, err);
+    ? console.log(`😲 globalErrorHander =>`, err)
+    : errorlogger.error(`😲 globalErrorHander =>`, err);
 
   let statusCode = 500; // Default status code for internal server errors
   let message = 'Something went wrong!'; // Default error message
@@ -42,7 +42,7 @@ const globalErrorHandler: ErrorRequestHandler = (
   }
   // Check if the error is an instance of the custom ApiError class
   else if (err instanceof ApiError) {
-    statusCode = err?.status;
+    statusCode = err?.statusCode;
     message = err?.message;
     errorMessage = err?.message
       ? [
@@ -66,14 +66,15 @@ const globalErrorHandler: ErrorRequestHandler = (
       : [];
   }
 
+  next(); // Call the next middleware function
+
   // Send the error response
-  res.status(statusCode).json({
+  return res.status(statusCode).json({
     success: false,
     message,
     errorMessage,
     stack: config.env !== 'production' ? err.stack : undefined,
   });
-  next(); // Call the next middleware function
 };
 
 export default globalErrorHandler;

@@ -3,30 +3,20 @@ import {
   IAcademicSemister,
   AcademicSemisterModel,
 } from './academicSemister.interface';
+import {
+  AcademicSemisterCodes,
+  AcademicSemisterMonths,
+  AcademicSemisterTitles,
+} from './academicSemister.constants';
 import ApiError from '../../../errors/ApiError';
 import httpStatus from 'http-status';
-
-const Months = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December',
-];
 
 const academicSemisterSchema = new Schema<IAcademicSemister>(
   {
     title: {
       type: String,
       required: true,
-      enum: ['Autumn', 'Summer', 'Fall'],
+      enum: AcademicSemisterTitles,
     },
     year: {
       type: Number,
@@ -35,23 +25,24 @@ const academicSemisterSchema = new Schema<IAcademicSemister>(
     code: {
       type: String,
       required: true,
-      enum: ['01', '02', '03'],
+      enum: AcademicSemisterCodes,
     },
     startMonth: {
       type: String,
       required: true,
-      enum: Months,
+      enum: AcademicSemisterMonths,
     },
     endMonth: {
       type: String,
       required: true,
-      enum: Months,
+      enum: AcademicSemisterMonths,
     },
   },
   {
     timestamps: true,
   }
 );
+
 // Handling same year and same semister conflict issue using mongoose ( pre ) middleware or hook.
 academicSemisterSchema.pre('save', async function (next) {
   const isExist = await AcademicSemister.findOne({

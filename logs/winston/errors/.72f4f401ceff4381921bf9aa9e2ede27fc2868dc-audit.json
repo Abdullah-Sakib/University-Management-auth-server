@@ -1,0 +1,40 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-BE\\logs\\winston\\errors\\.72f4f401ceff4381921bf9aa9e2ede27fc2868dc-audit.json",
+    "files": [
+        {
+            "date": 1686245802481,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-BE\\logs\\winston\\errors\\UMS-2023-06-08-23-errors.log",
+            "hash": "a5036531a2cd2e2674001df7578abe75aedb566872fda4400bb331daa80c4003"
+        },
+        {
+            "date": 1686247239502,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-BE\\logs\\winston\\errors\\UMS-2023-06-09-00-errors.log",
+            "hash": "16f99997f2bafd1cc5cb9b7892d59e6d75c6cc0574e0a8b7352c7d77019204db"
+        },
+        {
+            "date": 1686279204746,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-BE\\logs\\winston\\errors\\UMS-2023-06-09-08-errors.log",
+            "hash": "22dd564a7bc645ce3d5d4d2ecbc9188635adec6dca82f1181ee0815b676c57ea"
+        },
+        {
+            "date": 1686279737010,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-BE\\logs\\winston\\errors\\UMS-2023-06-09-09-errors.log",
+            "hash": "76a1a837397647a8e2ad0b7c6cfa5ede1a6a73aa94be4cd1d2dd228202f2aed5"
+        },
+        {
+            "date": 1686283627483,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-BE\\logs\\winston\\errors\\UMS-2023-06-09-10-errors.log",
+            "hash": "6fe50ff72b7a9fc837623657fd54591255508741dec52cef094566450712b73c"
+        },
+        {
+            "date": 1686287772674,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-BE\\logs\\winston\\errors\\UMS-2023-06-09-11-errors.log",
+            "hash": "c67cfb02d454a90fad949cab3106779f96edd0885ad8acdc9717e1e069192472"
+        }
+    ],
+    "hashType": "sha256"
+}
