@@ -10,6 +10,8 @@ router.post(
   AcademicSemesterController.createSemester
 );
 
-router.get('/getAllSemesters', AcademicSemesterController.getAllSemesters);
+router.get('/:id', AcademicSemesterController.getSingleSemester);
+
+router.get('/', AcademicSemesterController.getAllSemesters);
 
 export const AcademicSemesterRouter = router;
