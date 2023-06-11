@@ -15,6 +15,7 @@ const globalErrorHandler: ErrorRequestHandler = (
   err, // Error object representing a validation error
   req, // Express request object
   res, // Express response object
+  // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
   next // Express next function
 ) => {
   // Log errors in production environment otherwise log in console
@@ -74,8 +75,6 @@ const globalErrorHandler: ErrorRequestHandler = (
         ]
       : [];
   }
-
-  next(); // Call the next middleware function
 
   // Send the error response
   res.status(statusCode).json({

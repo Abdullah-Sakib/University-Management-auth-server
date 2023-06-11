@@ -69,6 +69,21 @@
             "date": 1686412846454,
             "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-06-10-22-errors.log",
             "hash": "20911a0d381796f4655857a2457c907b359c9897a618e393e58955a079131d95"
+        },
+        {
+            "date": 1686452622469,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-06-11-09-errors.log",
+            "hash": "3ae757a2111743567feecb2a33d5f3b69813e837bfb0556ee4025a66dd2f5119"
+        },
+        {
+            "date": 1686496165159,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-06-11-21-errors.log",
+            "hash": "ad0ca873fbcf0635ea164bafa549d83d0c6dd3f15900399ed1ae8f84e2d5d76c"
+        },
+        {
+            "date": 1686499255558,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-06-11-22-errors.log",
+            "hash": "b03a68c53297651c520106284e1ea90c476071e25f22383fcdfb683b443e9bdd"
         }
     ],
     "hashType": "sha256"
