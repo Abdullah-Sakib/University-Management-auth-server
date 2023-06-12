@@ -84,6 +84,36 @@
             "date": 1686499255545,
             "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\success\\UMS-2023-06-11-22-success.log",
             "hash": "fc4768d8c2773c1c68173f6ca78f978a05ced0c62a621f759705f07961d2beac"
+        },
+        {
+            "date": 1686567395016,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\success\\UMS-2023-06-12-16-success.log",
+            "hash": "d39f145e981fe3fdd7c7fa7c418fba0ef497b066eb874dadb05c8ca7c4273b28"
+        },
+        {
+            "date": 1686571015235,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\success\\UMS-2023-06-12-17-success.log",
+            "hash": "48e07948a668a6efe804e37224e9cb845c85f922e7da8be9fca38cb5b733c80d"
+        },
+        {
+            "date": 1686571200169,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\success\\UMS-2023-06-12-18-success.log",
+            "hash": "5a6a4081cb6c0bed04f90d604ae69cb010ce28ec80b72c483b857f38b465d8e8"
+        },
+        {
+            "date": 1686578267260,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\success\\UMS-2023-06-12-19-success.log",
+            "hash": "e1a531bce12b7c31b5eaac458592d3757949e65cd793eab1fc363a5438c1a545"
+        },
+        {
+            "date": 1686578401118,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\success\\UMS-2023-06-12-20-success.log",
+            "hash": "37f42229e6db4f30e7f67f9baf649be815605667210dc9897bdf28b098e0e6bb"
+        },
+        {
+            "date": 1686586167337,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\success\\UMS-2023-06-12-22-success.log",
+            "hash": "c9b53bdd0d62305c02853906bc4a35c5643535bebbd754a559c471130330595c"
         }
     ],
     "hashType": "sha256"

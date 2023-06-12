@@ -84,6 +84,36 @@
             "date": 1686499255558,
             "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-06-11-22-errors.log",
             "hash": "b03a68c53297651c520106284e1ea90c476071e25f22383fcdfb683b443e9bdd"
+        },
+        {
+            "date": 1686567395030,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-06-12-16-errors.log",
+            "hash": "af6b9f67ba7cd822d84ff177c8470ee7e8f575d3ca0f348aa3e8028646348341"
+        },
+        {
+            "date": 1686571015245,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-06-12-17-errors.log",
+            "hash": "9c3687e72b3a15ab371d8909d72a027b77e2f2da57af32f9a4cb71b5c68d3202"
+        },
+        {
+            "date": 1686571200184,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-06-12-18-errors.log",
+            "hash": "a57104dbc2b0ab28b27fe607b50ff0de85e04ab36f1533cc5814e82d8f8135d7"
+        },
+        {
+            "date": 1686578267272,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-06-12-19-errors.log",
+            "hash": "5bbb00be68655eac3ffd562138be48d6acaa8739880d0359e2a8586a7cdacd03"
+        },
+        {
+            "date": 1686578580422,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-06-12-20-errors.log",
+            "hash": "4107ef2072f1e1c219035758579f9252483931230aae3491dd600de072c97521"
+        },
+        {
+            "date": 1686586167352,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-06-12-22-errors.log",
+            "hash": "2d36a06a18714fe15f5f6f0875fb387c7a775efbf8d05380ecf6e642461970f4"
         }
     ],
     "hashType": "sha256"
