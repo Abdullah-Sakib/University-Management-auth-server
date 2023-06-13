@@ -9,7 +9,7 @@ const findLastStudentId = async (): Promise<string | undefined> => {
 };
 
 export const generateStudentId = async (
-  academicSemester: IAcademicSemester
+  academicSemester: IAcademicSemester | null
 ): Promise<string | null> => {
   const currentId =
     (await findLastStudentId()) || (0).toString().padStart(5, '0');

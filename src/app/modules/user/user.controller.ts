@@ -5,9 +5,9 @@ import sendResponse from '../../../shared/sendResponse';
 import httpStatus from 'http-status';
 import { IUser } from './user.interface';
 
-const createuser: RequestHandler = catchAsync(async (req, res) => {
-  const { ...user } = req.body;
-  const result = await UserService.createUser(user);
+const createStudent: RequestHandler = catchAsync(async (req, res) => {
+  const { student, ...user } = req.body;
+  const result = await UserService.createStudent(student, user);
 
   sendResponse<IUser>(res, {
     statusCode: httpStatus.OK,
@@ -18,5 +18,5 @@ const createuser: RequestHandler = catchAsync(async (req, res) => {
 });
 
 export const UserController = {
-  createuser,
+  createStudent,
 };
