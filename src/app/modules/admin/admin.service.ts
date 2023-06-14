@@ -5,21 +5,21 @@ import { IGenericResponse } from '../../../interfaces/common';
 import { IPaginationOptions } from '../../../interfaces/pagination';
 import ApiError from '../../../errors/ApiError';
 import httpStatus from 'http-status';
-import { IFaculty, IFacultyFilter } from './faculty.interface';
-import { facultySearchableFields } from './faculty.constants';
-import { Faculty } from './faculty.model';
+import { IAdmin, IAdminFilter } from './admin.interface';
+import { adminSearchableFields } from './admin.constants';
+import { Admin } from './admin.model';
 
-const getAllFaculties = async (
-  filters: IFacultyFilter,
+const getAllAdmins = async (
+  filters: IAdminFilter,
   paginationOptions: IPaginationOptions
-): Promise<IGenericResponse<IFaculty[]>> => {
+): Promise<IGenericResponse<IAdmin[]>> => {
   const { searchTerm, ...filtersData } = filters;
 
   const andConditions = [];
 
   if (searchTerm) {
     andConditions.push({
-      $or: facultySearchableFields?.map(field => ({
+      $or: adminSearchableFields?.map(field => ({
         [field]: {
           $regex: searchTerm,
           $options: 'i',
@@ -45,14 +45,13 @@ const getAllFaculties = async (
   const whereCondition =
     andConditions?.length > 0 ? { $and: andConditions } : {};
 
-  const result = await Faculty.find(whereCondition)
-    .populate('academicFaculty')
-    .populate('academicDepartment')
+  const result = await Admin.find(whereCondition)
+    .populate('managementDepartment')
     .sort(sortCondition)
     .skip(skip)
     .limit(limit);
 
-  const total = await Faculty.countDocuments(whereCondition);
+  const total = await Admin.countDocuments(whereCondition);
 
   return {
     meta: {
@@ -64,53 +63,51 @@ const getAllFaculties = async (
   };
 };
 
-const getSingleFaculty = async (id: string): Promise<IFaculty | null> => {
-  const result = await Faculty.findOne({ id })
-    .populate('academicFaculty')
-    .populate('academicDepartment');
+const getSingleAdmin = async (id: string): Promise<IAdmin | null> => {
+  const result = await Admin.findOne({ id }).populate('managementDepartment');
   return result;
 };
 
-const updateFaculty = async (
+const updateAdmin = async (
   id: string,
-  payload: Partial<IFaculty>
-): Promise<IFaculty | null> => {
-  const isExist = await Faculty.findOne({ id });
+  payload: Partial<IAdmin>
+): Promise<IAdmin | null> => {
+  const isExist = await Admin.findOne({ id });
 
   if (!isExist) {
-    throw new ApiError(httpStatus.BAD_REQUEST, 'Faculty not found');
+    throw new ApiError(httpStatus.BAD_REQUEST, 'Admin not found');
   }
 
-  const { name, ...facultyData } = payload;
+  const { name, ...AdminData } = payload;
 
-  const updateFacultyData: Partial<IFaculty> = { ...facultyData };
+  const updateAdminData: Partial<IAdmin> = { ...AdminData };
 
   // dynamically handling nested fields
   if (name && Object.keys(name)?.length > 0) {
     Object.keys(name).forEach(key => {
-      const nameKey = `name.${key}` as keyof Partial<IFaculty>; // `name.fisrtName`
-      (updateFacultyData as any)[nameKey] = name[key as keyof typeof name];
+      const nameKey = `name.${key}` as keyof Partial<IAdmin>; // `name.fisrtName`
+      (updateAdminData as any)[nameKey] = name[key as keyof typeof name];
     });
   }
 
-  const result = await Faculty.findOneAndUpdate({ id }, updateFacultyData, {
+  const result = await Admin.findOneAndUpdate({ id }, updateAdminData, {
     new: true,
   });
   return result;
 };
 
-// Have to delete user and Faculty. This fucnction should not be used for now.
+// Have to delete user and Admin. This fucnction should not be used for now.
 // It is necessary to user transaction and rollback in this function
-const deleteFaculty = async (id: string): Promise<IFaculty | null> => {
-  const result = await Faculty.findByIdAndDelete(id)
-    .populate('academicFaculty')
-    .populate('academicDepartment');
+const deleteAdmin = async (id: string): Promise<IAdmin | null> => {
+  const result = await Admin.findByIdAndDelete(id).populate(
+    'managementDepartment'
+  );
   return result;
 };
 
-export const FacultyService = {
-  getAllFaculties,
-  getSingleFaculty,
-  updateFaculty,
-  deleteFaculty,
+export const AdminService = {
+  getAllAdmins,
+  getSingleAdmin,
+  updateAdmin,
+  deleteAdmin,
 };
