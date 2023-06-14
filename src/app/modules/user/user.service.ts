@@ -26,9 +26,11 @@ const createStudent = async (
   );
 
   let newUserAllData = null;
+  // start session
   const session = await mongoose.startSession();
 
   try {
+    // start transaction
     session.startTransaction();
     const id = await generateStudentId(academicSemester);
 
@@ -53,12 +55,14 @@ const createStudent = async (
 
     newUserAllData = newUser[0];
 
+    // commit transaction and end session
     session.commitTransaction();
     session.endSession();
   } catch (error) {
+    // abort transaction and end session
     session.abortTransaction();
     session.endSession();
-    throw error;
+    throw new ApiError(httpStatus.BAD_REQUEST, 'User creation failed');
   }
 
   if (newUserAllData) {

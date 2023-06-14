@@ -129,6 +129,11 @@
             "date": 1686676434054,
             "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\success\\UMS-2023-06-13-23-success.log",
             "hash": "39ff043bd2baff5beacf297da60313c09fbc9373d19f117a3212304619fd78dd"
+        },
+        {
+            "date": 1686738281529,
+            "name": "E:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\success\\UMS-2023-06-14-16-success.log",
+            "hash": "28382695fc3e68c106e7ac3ddcf5d70a4abd4136164c815fa7b9016f51da569f"
         }
     ],
     "hashType": "sha256"
