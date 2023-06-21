@@ -22,4 +22,4 @@ router.post(
   UserController.createAdmin
 );
 
-export const UserRouter = router;
+export const UserRoutes = router;

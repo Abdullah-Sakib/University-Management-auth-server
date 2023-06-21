@@ -25,6 +25,7 @@ const createStudent = async (
   if (!user.password) {
     user.password = config.default_student_password as string;
   }
+
   // set user role
   user.role = 'student';
 
@@ -65,11 +66,11 @@ const createStudent = async (
 
     // commit transaction and end session
     await session.commitTransaction();
-    await session.endSession();
+    session.endSession();
   } catch (error) {
     // abort transaction and end session
     await session.abortTransaction();
-    await session.endSession();
+    session.endSession();
     throw new ApiError(httpStatus.BAD_REQUEST, 'User creation failed');
   }
 
@@ -98,6 +99,11 @@ const createFaculty = async (
   faculty: IFaculty,
   user: IUser
 ): Promise<IUser | null> => {
+  // Default password
+  if (!user.password) {
+    user.password = config.default_faculty_password as string;
+  }
+
   // set user role
   user.role = 'faculty';
 
@@ -164,8 +170,9 @@ const createAdmin = async (
 ): Promise<IUser | null> => {
   // Default password
   if (!user.password) {
-    user.password = config.default_student_password as string;
+    user.password = config.default_admin_password as string;
   }
+
   // set user role
   user.role = 'admin';
 
