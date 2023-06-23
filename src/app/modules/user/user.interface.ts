@@ -21,6 +21,7 @@ export type IUserMethods = {
     IUser,
     'id' | 'role' | 'needsPasswordChange' | 'password'
   > | null>;
+
   isPasswordMatched(
     givenPassword: string,
     savedPassword: string

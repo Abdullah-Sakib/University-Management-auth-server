@@ -18,7 +18,7 @@ const userSchema = new Schema<IUser, Record<string, never>, IUserMethods>(
     password: {
       type: String,
       required: true,
-      // select: 0,
+      select: 0,
     },
     needsPasswordChange: {
       type: Boolean,
@@ -47,7 +47,10 @@ const userSchema = new Schema<IUser, Record<string, never>, IUserMethods>(
 
 userSchema.methods.isUserExists = async function (
   id: string
-): Promise<Partial<IUser> | null> {
+): Promise<Pick<
+  IUser,
+  'id' | 'role' | 'needsPasswordChange' | 'password'
+> | null> {
   return await User.findOne(
     { id },
     { id: 1, password: 1, role: 1, needsPasswordChange: 1 }

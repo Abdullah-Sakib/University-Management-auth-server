@@ -16,6 +16,7 @@ import { IFaculty } from '../faculty/faculty.interface';
 import { Faculty } from '../faculty/faculty.model';
 import { IAdmin } from '../admin/admin.interface';
 import { Admin } from '../admin/admin.model';
+import { ENUM_USER_ROLE } from '../../../enums/user';
 
 const createStudent = async (
   student: IStudent,
@@ -27,7 +28,7 @@ const createStudent = async (
   }
 
   // set user role
-  user.role = 'student';
+  user.role = ENUM_USER_ROLE.STUDENT;
 
   // find academic semester
   const academicSemester = await AcademicSemester.findById(
@@ -105,7 +106,7 @@ const createFaculty = async (
   }
 
   // set user role
-  user.role = 'faculty';
+  user.role = ENUM_USER_ROLE.FACULTY;
 
   let newUserAllData = null;
   // start session
@@ -174,7 +175,7 @@ const createAdmin = async (
   }
 
   // set user role
-  user.role = 'admin';
+  user.role = ENUM_USER_ROLE.ADMIN;
 
   let newUserAllData = null;
   // start session
