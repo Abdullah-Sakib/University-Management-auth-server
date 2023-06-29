@@ -21,7 +21,7 @@ const auth =
 
       verifiedUser = jwtHelper.verifyToken(token, config.jwt.secret as Secret);
 
-      req.user = verifiedUser; // role , userid
+      req.user = verifiedUser; // role , id
 
       // role diye guard korar jnno
       if (requiredRoles.length && !requiredRoles.includes(verifiedUser.role)) {

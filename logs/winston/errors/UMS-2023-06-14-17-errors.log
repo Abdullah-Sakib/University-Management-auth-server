@@ -1,8 +1,0 @@
-[Wed Jun 14 2023 17:52:49] [UM] error: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_COMMITTED]
-[Wed Jun 14 2023 17:52:49] [UM] error: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_COMMITTED]
-[Wed Jun 14 2023 17:54:33] [UM] error: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
-[Wed Jun 14 2023 17:54:33] [UM] error: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
-[Wed Jun 14 2023 17:55:25] [UM] error: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_COMMITTED]
-[Wed Jun 14 2023 17:55:25] [UM] error: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_COMMITTED]
-[Wed Jun 14 2023 17:56:18] [UM] error: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_COMMITTED]
-[Wed Jun 14 2023 17:56:18] [UM] error: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_COMMITTED]
