@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import app from './app';
-import confit from './config/index';
+import config from './config/index';
 import { logger, errorlogger } from './shared/logger';
 import { Server } from 'http';
 
@@ -15,12 +15,12 @@ let server: Server;
 async function bootstrap() {
   try {
     // Connect to the database
-    await mongoose.connect(confit.database_url as string);
+    await mongoose.connect(config.database_url as string);
     logger.info('✅ Database connected successfully');
 
     // Start the server
-    server = app.listen(confit.port, () => {
-      logger.info(`Application listening on port ${confit.port}`);
+    server = app.listen(config.port, () => {
+      logger.info(`Application listening on port ${config.port}`);
     });
   } catch (err) {
     // Log error if database connection fails

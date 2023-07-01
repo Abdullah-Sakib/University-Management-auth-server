@@ -16,7 +16,10 @@ app.use(cookieParser());
 // Application routes
 app.use('/api/v1', routers);
 
-// Handle not found
+// Global error handler
+app.use(globalErrorHandler);
+
+// Handle not found routes
 app.use((req: Request, res: Response) => {
   res.status(httpStatus.NOT_FOUND).json({
     success: false,
@@ -29,8 +32,5 @@ app.use((req: Request, res: Response) => {
     ],
   });
 });
-
-// Global error handler
-app.use(globalErrorHandler);
 
 export default app;

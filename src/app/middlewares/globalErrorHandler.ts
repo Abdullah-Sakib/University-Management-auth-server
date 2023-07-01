@@ -27,7 +27,7 @@ const globalErrorHandler: ErrorRequestHandler = (
   let message = 'Something went wrong!'; // Default error message
   let errorMessage: GenericErrorMessage[] = []; // Array to store detailed error messages
 
-  // Check if the error is a validation error
+  // Check if the error is a mongoose validation error
   if (err?.name === 'ValidationError') {
     // Handle the validation error
     const simplifiedError = handleValidationError(err);
