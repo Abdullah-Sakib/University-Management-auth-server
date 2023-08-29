@@ -99,7 +99,7 @@ const updateFaculty = async (
   return result;
 };
 
-// Have to delete user and Faculty. This fucnction should not be used for now.
+// Have to delete User and Faculty. This fucnction should not be used for now.
 // It is necessary to user transaction and rollback in this function
 const deleteFaculty = async (id: string): Promise<IFaculty | null> => {
   const result = await Faculty.findByIdAndDelete(id)
