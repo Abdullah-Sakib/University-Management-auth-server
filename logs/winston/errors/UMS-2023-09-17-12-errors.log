@@ -1,0 +1,6 @@
+[Sun Sep 17 2023 12:21:43] [UM] error: AcademicDepartment validation failed: academicFaculty: Path `academicFaculty` is required.
+[Sun Sep 17 2023 12:24:11] [UM] error: AcademicDepartment validation failed: academicFaculty: Path `academicFaculty` is required.
+[Sun Sep 17 2023 12:25:29] [UM] error: AcademicDepartment validation failed: academicFaculty: Path `academicFaculty` is required.
+[Sun Sep 17 2023 12:26:59] [UM] error: AcademicDepartment validation failed: academicFaculty: Path `academicFaculty` is required.
+[Sun Sep 17 2023 12:28:33] [UM] error: AcademicDepartment validation failed: academicFaculty: Path `academicFaculty` is required.
+[Sun Sep 17 2023 12:30:5] [UM] error: E11000 duplicate key error collection: University-management.academicfaculties index: title_1 dup key: { title: "Faculty of Computer Science and Engneering 3" }

@@ -39,6 +39,11 @@
             "date": 1694926942057,
             "name": "D:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-09-17-11-errors.log",
             "hash": "9ed8e4fc7a4888873c0be92b45217bfb70dfce8fafac0ee164c81427a5d14893"
+        },
+        {
+            "date": 1694931576047,
+            "name": "D:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-09-17-12-errors.log",
+            "hash": "52e256b4213e91fe287bd4d149fcd4008fb4b6e12749416fecc98ea77fd491fc"
         }
     ],
     "hashType": "sha256"
