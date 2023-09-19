@@ -118,7 +118,6 @@ const insertIntoDBFromEvent = async (
     academicFaculty: academicFaculty?._id,
     syncId: e.id,
   };
-  console.log(academicFaculty);
   await AcademicDepartment.create(payload);
 };
 
