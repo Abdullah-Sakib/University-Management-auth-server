@@ -9,7 +9,7 @@ import config from '../../../config';
 const loginUser: RequestHandler = catchAsync(async (req, res) => {
   const { ...loginData } = req.body;
   const result = await AuthService.loginUser(loginData);
-  const { refreshToken, ...others } = result;
+  const { refreshToken } = result;
 
   const cookieOptions = {
     secure: config.env === 'production',
@@ -23,7 +23,7 @@ const loginUser: RequestHandler = catchAsync(async (req, res) => {
     statusCode: httpStatus.OK,
     success: true,
     message: 'user login successfully',
-    data: others,
+    data: result,
   });
 });
 

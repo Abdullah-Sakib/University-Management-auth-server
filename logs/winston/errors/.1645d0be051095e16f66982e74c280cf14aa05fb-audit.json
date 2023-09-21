@@ -6,11 +6,6 @@
     "auditLog": "D:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\.1645d0be051095e16f66982e74c280cf14aa05fb-audit.json",
     "files": [
         {
-            "date": 1693976792177,
-            "name": "D:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-09-06-11-errors.log",
-            "hash": "854e4a6e75ea26f7d678606dcbeb13d3abe1e49a72a3ef11d5569e4040b989ee"
-        },
-        {
             "date": 1694318811381,
             "name": "D:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-09-10-10-errors.log",
             "hash": "09cb673dd4b615ca4610c1daecf643d969c7ba1329b4550adbdbcb04c72df88e"
@@ -74,6 +69,11 @@
             "date": 1695154136475,
             "name": "D:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-09-20-02-errors.log",
             "hash": "4dcb001897fe973a2a35440ea18d857795b2b2984cf68ddbc90c7cfd2a18c845"
+        },
+        {
+            "date": 1695299894832,
+            "name": "D:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\errors\\UMS-2023-09-21-18-errors.log",
+            "hash": "bf70b54f2b57c571aa652f5e4968221ab4d6a22ac7c226a2306807ab66c4e9c8"
         }
     ],
     "hashType": "sha256"
