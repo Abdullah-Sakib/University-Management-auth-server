@@ -1,13 +1,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { SortOrder } from 'mongoose';
+import mongoose, { SortOrder } from 'mongoose';
 import { paginationHelper } from '../../../helper/paginationHelper';
 import { IGenericResponse } from '../../../interfaces/common';
 import { IPaginationOptions } from '../../../interfaces/pagination';
 import ApiError from '../../../errors/ApiError';
 import httpStatus from 'http-status';
 import { IFaculty, IFacultyFilter } from './faculty.interface';
-import { facultySearchableFields } from './faculty.constants';
+import {
+  EVENT_FACULTY_UPDATED,
+  facultySearchableFields,
+} from './faculty.constants';
 import { Faculty } from './faculty.model';
+import { RedisClient } from '../../../shared/redis';
+import { User } from '../user/user.model';
 
 const getAllFaculties = async (
   filters: IFacultyFilter,
@@ -95,17 +100,43 @@ const updateFaculty = async (
 
   const result = await Faculty.findOneAndUpdate({ id }, updateFacultyData, {
     new: true,
-  });
+  })
+    .populate('academicFaculty')
+    .populate('academicDepartment');
+
+  if (result) {
+    await RedisClient.publish(EVENT_FACULTY_UPDATED, JSON.stringify(result));
+  }
   return result;
 };
 
-// Have to delete User and Faculty. This fucnction should not be used for now.
-// It is necessary to user transaction and rollback in this function
 const deleteFaculty = async (id: string): Promise<IFaculty | null> => {
-  const result = await Faculty.findByIdAndDelete(id)
-    .populate('academicFaculty')
-    .populate('academicDepartment');
-  return result;
+  // check if the faculty is exist
+  const isExist = await Faculty.findOne({ id });
+
+  if (!isExist) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'Faculty not found !');
+  }
+
+  const session = await mongoose.startSession();
+
+  try {
+    session.startTransaction();
+    // delete faculty first
+    const faculty = await Faculty.findOneAndDelete({ id }, { session });
+    if (!faculty) {
+      throw new ApiError(404, 'Failed to delete student');
+    }
+    // delete user
+    await User.deleteOne({ id });
+    session.commitTransaction();
+    session.endSession();
+
+    return faculty;
+  } catch (error) {
+    session.abortTransaction();
+    throw error;
+  }
 };
 
 export const FacultyService = {

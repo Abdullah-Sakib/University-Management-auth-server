@@ -1,13 +1,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { SortOrder } from 'mongoose';
+import mongoose, { SortOrder } from 'mongoose';
 import { paginationHelper } from '../../../helper/paginationHelper';
 import { IGenericResponse } from '../../../interfaces/common';
 import { IPaginationOptions } from '../../../interfaces/pagination';
 import { IStudent, IStudentFilter } from './student.interface';
-import { studentSearchableFields } from './student.constants';
+import {
+  EVENT_STUDENT_UPDATED,
+  studentSearchableFields,
+} from './student.constants';
 import { Student } from './student.model';
 import ApiError from '../../../errors/ApiError';
 import httpStatus from 'http-status';
+import { RedisClient } from '../../../shared/redis';
+import { User } from '../user/user.model';
 
 const getAllStudents = async (
   filters: IStudentFilter,
@@ -108,21 +113,46 @@ const updateStudent = async (
         localGuardian[key as keyof typeof localGuardian];
     });
   }
-
   const result = await Student.findOneAndUpdate({ id }, updateStudentData, {
     new: true,
-  });
-  return result;
-};
-
-// Have to delete user and student. This fucnction should not be used for now.
-// It is necessary to user transaction and rollback in this function
-const deleteStudent = async (id: string): Promise<IStudent | null> => {
-  const result = await Student.findByIdAndDelete(id)
+  })
     .populate('academicFaculty')
     .populate('academicDepartment')
     .populate('academicSemester');
+
+  if (result) {
+    await RedisClient.publish(EVENT_STUDENT_UPDATED, JSON.stringify(result));
+  }
   return result;
+};
+
+const deleteStudent = async (id: string): Promise<IStudent | null> => {
+  // check if the student is exist
+  const isExist = await Student.findOne({ id });
+
+  if (!isExist) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'Student not found !');
+  }
+
+  const session = await mongoose.startSession();
+
+  try {
+    session.startTransaction();
+    //delete student first
+    const student = await Student.findOneAndDelete({ id }, { session });
+    if (!student) {
+      throw new ApiError(404, 'Failed to delete student');
+    }
+    //delete user
+    await User.deleteOne({ id });
+    session.commitTransaction();
+    session.endSession();
+
+    return student;
+  } catch (error) {
+    session.abortTransaction();
+    throw error;
+  }
 };
 
 export const StudentService = {

@@ -15,3 +15,5 @@ export const facultyFilterableFields = [
   'contactNo',
   'emergencyContactNo',
 ];
+
+export const EVENT_FACULTY_UPDATED = 'faculty.updated';
